@@ -151,10 +151,6 @@ MIT
 MIT
 MIT
 
-@angular/service-worker@6.1.1
-MIT
-MIT
-
 @ng-select/ng-select@2.3.6
 MIT
 MIT

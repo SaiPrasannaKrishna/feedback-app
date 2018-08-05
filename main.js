@@ -158,16 +158,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _services_candidate_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./services/candidate.service */ "./src/app/services/candidate.service.ts");
 /* harmony import */ var _pipes_skillset_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pipes/skillset.pipe */ "./src/app/pipes/skillset.pipe.ts");
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm5/service-worker.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
 
 
 
@@ -218,8 +214,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_13__["HttpModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_20__["HttpClientModule"],
-                _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__["NgSelectModule"],
-                _environments_environment__WEBPACK_IMPORTED_MODULE_24__["environment"].production ? _angular_service_worker__WEBPACK_IMPORTED_MODULE_23__["ServiceWorkerModule"].register('ngsw-worker.js') : []
+                _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__["NgSelectModule"]
             ],
             providers: [_authService_authGuard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"], _services_candidate_service__WEBPACK_IMPORTED_MODULE_21__["CandidateService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -353,7 +348,7 @@ module.exports = "p{\r\n  color:red;\r\n}\r\n\r\nmat-tab{\r\n  width:50%;\r\n  o
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n    <span id=\"title\"></span>\n    <span class=\"example-fill-remaining-space\"></span>\n    <span [routerLink]=\"['home']\"  title=\"home\" class=\"icons\"><mat-icon>home</mat-icon></span>\n    <span (click)=\"feedback()\" title=\"Feedback\" class=\"icons\"><mat-icon>create</mat-icon></span>\n    <mat-form-field>\n        <mat-select [(value)]=\"selected\">\n          <mat-option>None</mat-option>\n          <mat-option value=\"entity\">Entity</mat-option>\n          <mat-option value=\"name\">Name</mat-option>\n          <mat-option value=\"skills\">skills</mat-option>\n          <mat-option value=\"level\">level</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <mat-form-field class=\"example-form-field\">\n        <input matInput type=\"text\" placeholder=\"\" [(ngModel)]=\"value\">\n        <button mat-button  matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"search(value,selected)\">\n          <mat-icon>search</mat-icon>\n        </button>\n      </mat-form-field>\n    <span class=\"example-fill-remaining-space\"></span>\n    <span (click)=\"logoff()\" title=\"logout\" class=\"icons\"   style=\"float:right;\"><mat-icon>power_settings_new</mat-icon></span>\n  </mat-toolbar>\n<div>\n    <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<mat-toolbar color=\"primary\">\n    <span id=\"title\">Feedback Simplified</span>\n    <span class=\"example-fill-remaining-space\"></span>\n    <span [routerLink]=\"['home']\"  title=\"home\" class=\"icons\"><mat-icon>home</mat-icon></span>\n    <span (click)=\"feedback()\" title=\"Feedback\" class=\"icons\"><mat-icon>create</mat-icon></span>\n    <mat-form-field>\n        <mat-select [(value)]=\"selected\">\n          <mat-option>None</mat-option>\n          <mat-option value=\"entity\">Entity</mat-option>\n          <mat-option value=\"name\">Name</mat-option>\n          <mat-option value=\"skills\">skills</mat-option>\n          <mat-option value=\"level\">level</mat-option>\n        </mat-select>\n    </mat-form-field>\n    <mat-form-field class=\"example-form-field\">\n        <input matInput type=\"text\" placeholder=\"\" [(ngModel)]=\"value\">\n        <button mat-button  matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"search(value,selected)\">\n          <mat-icon>search</mat-icon>\n        </button>\n      </mat-form-field>\n    <span class=\"example-fill-remaining-space\"></span>\n    <span (click)=\"logoff()\" title=\"logout\" class=\"icons\"   style=\"float:right;\"><mat-icon>power_settings_new</mat-icon></span>\n  </mat-toolbar>\n<div>\n    <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -395,7 +390,7 @@ var DashboardComponent = /** @class */ (function () {
     };
     DashboardComponent.prototype.feedback = function () {
         this._custSer.navigateCandidate({ sno: 0, level: 'Level0', isExisting: false });
-        this.route.navigate(['feedback']);
+        this.route.navigate(['/dashboard/feedback']);
     };
     DashboardComponent.prototype.logoff = function () {
         localStorage.removeItem('isLoggedIn');
@@ -1074,7 +1069,7 @@ module.exports = "\r\n\r\n  mat-card {\r\n    max-width: 500px;\r\n    margin: 2
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n    <span id=\"title\"></span>\n    <span class=\"example-fill-remaining-space\"></span>\n  </mat-toolbar>\n<div *ngIf=\"isLoading\">\n<mat-progress-bar mode=\"indeterminate\" [color]=\"warn\"></mat-progress-bar></div>\n<div class=\"signin-content\">\n<mat-card class=\"example-card\">\n  <mat-card-header>\n    Login \n  </mat-card-header>\n  <mat-card-content>\n      <div class=\"example-container\">\n        <form class=\"example-form\" #f=\"ngForm\" (ngSubmit)=\"login(f.value)\">\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Username\" \n                            id=\"username\" name=\"username\"\n                            required ngModel #username = \"ngModel\">\n          </mat-form-field>\n          <mat-form-field class=\"example-full-width\">\n              <input type=\"password\" matInput  placeholder=\"Password\"\n                                               id=\"password\" name=\"password\"\n                                               required ngModel #password=\"ngModel\">\n          </mat-form-field>\n          <button mat-raised-button color=\"primary\" \n           id=\"login-button\"\n           [disabled]=\"!f.valid\"\n           style=\"color:black;\">Login</button>\n        </form>\n        </div>\n  </mat-card-content>\n\n</mat-card>\n</div>"
+module.exports = "<mat-toolbar color=\"primary\">\n    <span id=\"title\">Feedback Simplified</span>\n    <span class=\"example-fill-remaining-space\"></span>\n  </mat-toolbar>\n<div *ngIf=\"isLoading\">\n<mat-progress-bar mode=\"indeterminate\" [color]=\"warn\"></mat-progress-bar></div>\n<div class=\"signin-content\">\n<mat-card class=\"example-card\">\n  <mat-card-header>\n    Login \n  </mat-card-header>\n  <mat-card-content>\n      <div class=\"example-container\">\n        <form class=\"example-form\" #f=\"ngForm\" (ngSubmit)=\"login(f.value)\">\n          <mat-form-field class=\"example-full-width\">\n            <input matInput placeholder=\"Username\" \n                            id=\"username\" name=\"username\"\n                            required ngModel #username = \"ngModel\">\n          </mat-form-field>\n          <mat-form-field class=\"example-full-width\">\n              <input type=\"password\" matInput  placeholder=\"Password\"\n                                               id=\"password\" name=\"password\"\n                                               required ngModel #password=\"ngModel\">\n          </mat-form-field>\n          <button mat-raised-button color=\"primary\" \n           id=\"login-button\"\n           [disabled]=\"!f.valid\"\n           style=\"color:black;\">Login</button>\n        </form>\n        </div>\n  </mat-card-content>\n\n</mat-card>\n</div>"
 
 /***/ }),
 
@@ -1439,10 +1434,10 @@ var CandidateService = /** @class */ (function () {
         this.currentMessage = this.messageBus.asObservable();
     }
     CandidateService.prototype.getCandidates = function () {
-        return this._http.get('/assets/candidates.json');
+        return this._http.get('/feedback-app/assets/candidates.json');
     };
     CandidateService.prototype.getFeedback = function () {
-        return this._http.get('/assets/feedbackLists.json');
+        return this._http.get('/feedback-app/assets/feedbackLists.json');
     };
     CandidateService.prototype.navigateCandidate = function (data) {
         this.messageBus.next(data);
