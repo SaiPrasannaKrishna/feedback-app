@@ -1,0 +1,33 @@
+<div class="existing-candidate container" style="padding-top:5%;">
+    <div class="row" style="overflow-y:none;">
+      <div class="col-md-4 col-lg-4 col-sm-12 col-xs-11 offset-xs-1" 
+      *ngFor="let item of existingFeedback">
+        <div class="panel panel-default">
+          <div class="panel-heading"><b>{{item.level}}</b></div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <p><b>Feedback:</b></p>
+                  <p><b>JobId:</b></p>
+                  <p><b>InterviewerName:</b></p>
+                  <p><b>rating:</b></p>
+                  
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <p>{{item.feedback}}</p>
+                  <p>{{item.jobId}}</p>
+                  <p>{{item.interviewerName}}</p>
+                  <div class="rating-icon">
+                      <mat-icon [ngClass]="{'mat-icon-star':(item.rating == 1 || item.rating == 2 || item.rating ==3 || item.rating == 4 || item.rating == 5)}">star</mat-icon>
+                      <mat-icon [ngClass]="{'mat-icon-star':(item.rating == 2 || item.rating ==3 || item.rating == 4 || item.rating == 5)}">star</mat-icon>
+                      <mat-icon [ngClass]="{'mat-icon-star':(item.rating ==3 || item.rating == 4 || item.rating == 5)}">star</mat-icon>
+                      <mat-icon [ngClass]="{'mat-icon-star':(item.rating == 4 || item.rating == 5)}">star</mat-icon>
+                      <mat-icon [ngClass]="{'mat-icon-star':item.rating == 5}">star</mat-icon>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

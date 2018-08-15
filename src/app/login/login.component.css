@@ -1,0 +1,59 @@
+
+
+  mat-card {
+    max-width: 500px;
+    margin: 2em auto;
+    text-align: center;
+    background: #211f1f;
+  }
+  span{
+      color: black;
+  }
+  mat-card-header{
+    margin-left: 38%;
+    font-size: 20px;
+    font-family: unset;
+    color:#86bc25;
+    padding-bottom: 25px;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+
+  mat-form-field{
+      margin-top:5%;
+  }
+  .signin-content {
+    padding: 60px 1rem;
+  }
+  .full-width-input {
+    width: 100%;
+  }
+  #login-button{
+      width: 50%;
+      margin-top: 10%;
+  }
+  #login-button:disabled{
+    background:#5f6b48;
+  }
+
+  ::ng-deep .mat-progress-bar-fill::after {
+    background-color:   #86bc25EB!important;  
+  }
+  
+  ::ng-deep .mat-progress-bar-buffer {
+    background: #424242!important;
+  }
+  
+  ::ng-deep .mat-progress-bar {
+    border-radius: 2px;
+  }
+ 

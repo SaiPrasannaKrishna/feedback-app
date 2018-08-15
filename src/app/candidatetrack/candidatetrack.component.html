@@ -1,0 +1,82 @@
+<mat-card>
+        <mat-card-header>
+            Feedback Form
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-xs-1">
+            </div>
+            <div class="col-md-6 col-lg-6 col-xs-10">
+                <div class="example-container">
+                  <form class="example-container" #f="ngForm" (ngSubmit)="submitCandidate(f.value)">
+                    <mat-form-field>
+                      <input matInput placeholder="Candidate Name" required 
+                      id="candidateName" name="candidate.name" [(ngModel)]="candidate.name">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Job Id" required
+                        id="jobId" name="jobId" ScrollDirective  [(ngModel)]="jobId">
+                      </mat-form-field>
+                    <mat-form-field>
+                      <textarea matInput placeholder="Feedback" id="feedbackId"
+                      name="feedbackId"
+                      [(ngModel)]="feedbackId"></textarea>
+                    </mat-form-field>
+                  
+                    <mat-form-field>
+                      <mat-select placeholder="Entity" [(ngModel)]="candidate.entity" 
+                      name="candidate.entity" id="entityId">
+                        <mat-option value="XYZ">XYZ</mat-option>
+                        <mat-option value="XYZ2">XYZ2</mat-option>
+                        <mat-option value="XYZ3">XYZ3</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select placeholder="Interview Level" [(ngModel)]="candidate.level" 
+                        name="candidate.level" id="entityId">
+                          <mat-option value="Versant">Versant</mat-option>
+                          <mat-option value="Level1">Level1</mat-option>
+                          <mat-option value="Level2">Level2</mat-option>
+                          <mat-option value="Level3">Level3</mat-option>
+                          <mat-option value="Level4">Level4</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    <ng-select [items]="skills"
+                   bindLabel="name"
+                   bindValue="name"
+                   name="selectedSkills"
+                   [addTag]="addCustomSkill"
+                   [multiple]="true"
+                   [(ngModel)] ="selectedSkills"
+                   placeholder="Select skills">
+                    </ng-select>                    
+
+                    <mat-form-field>
+                        <mat-select placeholder="Location" [(ngModel)]="candidate.location"
+                        name="candidate.location" id="locationId">
+                          <mat-option value="Hyderabad"> Hyderabad</mat-option>
+                          <mat-option value="Mumbai">Mumbai</mat-option>
+                          <mat-option value="Delhi">Delhi</mat-option>
+                          <mat-option value="Bangalore">Bangalore</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    <p>Rating</p>
+                    <div class="rating-icon">
+                    <mat-icon [ngClass]="{'mat-icon-star':(selectedStar == 1 || selectedStar == 2 || selectedStar ==3 || selectedStar == 4 || selectedStar == 5)}" (click)="selectedStar = 1;">star</mat-icon>
+                    <mat-icon [ngClass]="{'mat-icon-star':(selectedStar == 2 || selectedStar ==3 || selectedStar == 4 || selectedStar == 5)}" (click)="selectedStar = 2;">star</mat-icon>
+                    <mat-icon [ngClass]="{'mat-icon-star':(selectedStar ==3 || selectedStar == 4 || selectedStar == 5)}" (click)="selectedStar = 3;">star</mat-icon>
+                    <mat-icon [ngClass]="{'mat-icon-star':(selectedStar == 4 || selectedStar == 5)}" (click)="selectedStar = 4;">star</mat-icon>
+                    <mat-icon [ngClass]="{'mat-icon-star':selectedStar == 5}" (click)="selectedStar = 5;starSelected = false;">star</mat-icon>
+                  </div><br/><br/>
+                  <button mat-raised-button color="primary" 
+                   id="feedback-button"
+                  [disabled]="!f.valid"
+                  style="color:black;">Submit</button>
+                </form></div>
+                </div>
+            <div class="col-md-3 col-lg-3 col-xs-1">
+              
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>

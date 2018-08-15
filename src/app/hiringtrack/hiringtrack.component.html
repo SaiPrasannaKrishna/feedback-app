@@ -1,0 +1,46 @@
+        <div class="selected-stage">
+          <div class="row stage-names">
+              <div class="col-md-2 col-lg-2 col-xs-2">
+                </div>
+                <div class="col-md-2 col-lg-2 col-xs-2">
+                  <span>Level0</span>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xs-2">
+                    <span>Level1</span>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xs-2">
+                    <span>Level2</span>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xs-2">
+                    <span>Level3</span>
+                  </div>
+                  <div class="col-md-2 col-lg-2 col-xs-2">
+                  </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2 col-lg-2 col-xs-2">
+            </div>
+            <div class="col-md-2 col-lg-2 col-xs-2">
+                <mat-icon
+                [ngClass]="{'highlight':(selectedStage == 20 || selectedStage == 40|| selectedStage == 60 || selectedStage == 80)}">label</mat-icon>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xs-2">
+                  <mat-icon
+                  [ngClass]="{'highlight':(selectedStage ==40 || selectedStage ==60 || selectedStage == 80)}"
+                  >label</mat-icon>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xs-2">
+                  <mat-icon
+                  [ngClass] ="{'highlight': (selectedStage ==60 || selectedStage == 80)} ">label</mat-icon>
+              </div>
+            <div class="col-md-2 col-lg-2 col-xs-2">
+                <mat-icon 
+                [ngClass] ="{'highlight': (selectedStage ==80)} ">label</mat-icon>
+            </div>
+              <div class="col-md-2 col-lg-2 col-xs-2">
+              </div>
+          </div>
+        </div>
+        <span *ngIf="selectedStage < 100">
+        <mat-progress-bar mode="determinate" [value]="selectedStage" [color]="warn"></mat-progress-bar>
+      </span>

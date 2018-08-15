@@ -1,0 +1,83 @@
+
+ mat-card-header{
+  font-size: 20px;
+  font-family: unset;
+  color:#86bc25;
+  padding-bottom: 25px;
+}
+
+.selected-stage{
+  overflow-x: hidden;
+  margin-top: 10%;
+  margin-bottom: 2%;
+  
+}
+.selected-stage mat-icon{
+  font-size:125px;
+  }
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+@media screen and (max-width:900px){
+  mat-card-header{
+    padding-bottom: 0px;
+  }
+  .selected-stage .row{
+    margin:0 2%;
+  }
+  .selected-stage mat-icon{
+    font-size:75px;
+    }
+}
+
+.stage-names span{
+  margin-left: 20%;
+  color:white;
+}
+
+.circle-stage{
+  border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    padding: 33%;
+    background: #000;
+}
+
+mat-icon{
+  font-size:6px;
+}
+
+.rating-icon mat-icon{
+  font-size:18px;
+}
+
+.highlight{
+ color: #86bc25;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color:   #86bc25EB!important;  
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background: #424242!important;
+}
+
+::ng-deep .mat-progress-bar {
+  border-radius: 2px;
+}

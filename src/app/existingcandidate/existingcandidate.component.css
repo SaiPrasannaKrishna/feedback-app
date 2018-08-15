@@ -1,0 +1,11 @@
+.panel-default>.panel-heading{
+  color:white;
+  background-color:#86bc25;
+  border:none;
+}
+.panel-default {
+  border-color: #86bc25;
+}
+.mat-icon-star{
+  color:#86bc25;
+}

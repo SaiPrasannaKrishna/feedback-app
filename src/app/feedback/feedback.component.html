@@ -1,0 +1,22 @@
+<mat-tab-group  mat-stretch-tabs="always" [selectedIndex]="selectedTab">
+    <mat-tab label="Candidate Hiring Track">
+    <app-hiringtrack [selectedstage]="selectedStage"></app-hiringtrack>
+    </mat-tab>
+    <mat-tab label="Candidate Details">
+      <app-candidatetrack
+       *ngIf="!newCandidate && !!candidate"
+       [candidate]="candidate"
+       [selectedstar]="selectedStar"
+       [selectedskills]="selectedSkills">
+      </app-candidatetrack>
+      <app-newcandidate
+       *ngIf="newCandidate">
+      </app-newcandidate>
+    </mat-tab>
+    <mat-tab label="Interviewer Details">
+      <app-interviewertrack></app-interviewertrack>
+    </mat-tab>
+    <mat-tab label="Candidate Feedback" [disabled]="!existingCandidate"> 
+        <app-existingcandidate [existingfeedback]="existingFeedback"></app-existingcandidate>
+    </mat-tab>
+  </mat-tab-group>

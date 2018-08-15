@@ -1,0 +1,39 @@
+p{
+  color:red;
+}
+
+mat-tab{
+  width:50%;
+  overflow-x: hidden;
+}
+.icons{
+  flex:0.1;
+  outline: none;
+}
+mat-icon{
+  font-size:40px;
+  color:black;
+  cursor: pointer;
+}
+mat-form-field{
+  padding-left: 2%;
+  color: black;
+}
+.log-off{
+  cursor: pointer;
+}
+span{
+  color: black;
+}
+
+@media only screen and (max-width:960px){
+  mat-icon{
+    font-size:25px;
+    color: black;
+  }
+  mat-form-field{
+    display: none;
+   color: black;
+    
+  }
+}

@@ -1,0 +1,19 @@
+@media screen and (max-width:700px){
+    mat-card-content{
+        margin-top:6%;
+    }
+}
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+  mat-icon:hover{
+  color:#86bc25;
+  }
+  
+  mat-icon:hover::after{
+    color:#86bc25;
+    }
+  .mat-icon-star{
+    color:#86bc25;
+  }
